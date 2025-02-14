@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="/css/addTransaction.css">
+</head>
+
+<body>
+
+    <h1 class="title">Add Transaction</h1>
+
+    <div class="addTransaction">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-6">
+                    <form action="/addTransaction" method="post" class="addingForm">
+                        
+                        <div class="input-group input-group-sm mb-3">
+                            <span class="d-block me-3">Title :-</span>
+                            <input type="text" class="form-control" placeholder="Enter Title" name="title">
+                        </div><br>
+
+                        <div class="input-group input-group-sm mb-3">
+                            <span class="d-block me-3">Description :-</span>
+                            <input type="text" class="form-control" placeholder="Enter Description" name="description">
+                        </div><br>
+
+                        <div class="input-group input-group-sm mb-3">
+                            <span class="d-block me-3">Amount :-</span>
+                            <input type="number" class="form-control" placeholder="Enter Amount" name="amount">
+                        </div><br>
+
+                        <div class="input-group input-group-sm mb-3">
+                            <span class="d-block me-3">Category :-</span>
+                            <select class="category" name="category">
+                                <option value="Food">Food</option>
+                                <option value="Rent">Rent</option>
+                                <option value="Salary">Salary</option>
+                            </select>
+                        </div><br>
+
+                        <div class="input-group input-group-sm mb-3">
+                            <span class="d-block me-3">Date :-</span>
+                            <input type="date" class="form-control" placeholder="Enter Date" name="date">
+                        </div><br>
+
+                        <div class="submit-btn d-flex align-items-center justify-content-center">
+                            <input type="submit" value="Submit" class="submit">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

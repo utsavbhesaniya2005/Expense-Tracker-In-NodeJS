@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #F0F4F7;
+}
+.title{
+    margin-top: 30px;
+    text-align: center;
+    color: #8A5EFF;
+}
+.addTransaction-btn{
+    display: block;
+    background-color: #8A5EFF;
+    outline: none;
+    box-shadow: none;
+    border: 1px solid white;
+    padding: 10px 30px;
+    color: white;
+    border-radius: 12px;
+    font-size: 20px;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+}
+.addTransaction-btn:hover{
+    background-color: #404f5a;
+}
+.allTransaction{
+    box-shadow: 5px 10px 10px 5px rgba(0, 0, 0, 0.3);
+}
+.allTransaction, .table{
+    border-radius: 18px !important;
+    padding: 15px 0 !important;
+    background-color: white;
+}
+tbody tr td{
+    padding: 20px 30px !important;
+}
+.edit-btn{
+    margin-right: 10px;
+}
+.edit-btn, .delete-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    padding: 5px 20px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 0.8px;
+    font-weight: 600;
+}

@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #F0F4F7;
+}
+.title{
+    margin-top: 35px;
+    text-align: center;
+    color: #8A5EFF;
+}
+.addTransaction{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 50px;
+}
+.addingForm{
+    background-color: white;
+    padding: 35px;
+    border-radius: 14px;
+    box-shadow: 10px 10px 5px 5px rgb(0, 0, 0, 0.1);
+}
+.input-group{
+    display: flex;
+    align-items: center;
+}
+.input-group span{
+    font-size: 16px;
+    font-weight: 700;
+}
+.input-group .form-control{
+    padding: 10px 15px;
+    border-radius: 8px !important;
+}
+.category{
+    width: 100%;
+    border-radius: 8px !important;
+    margin-top: 15px;
+    padding: 10px 20px;
+}
+.submit{
+    display: block;
+    background-color: #8A5EFF;
+    outline: none;
+    box-shadow: none;
+    border: 1px solid white;
+    padding: 10px 30px;
+    color: white;
+    border-radius: 12px;
+    font-size: 20px;
+    transition: all 0.3s ease-in-out;
+}
+.submit:hover{
+    background-color: #404f5a;
+}
