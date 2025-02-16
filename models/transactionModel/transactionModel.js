@@ -17,7 +17,7 @@ const transactionSchema = new mongoose.Schema({
             type : Date,
             default : Date.now        
         },
-    description : String,
+    description : String
 });
 
 const transactionModel = mongoose.model('transactions', transactionSchema);

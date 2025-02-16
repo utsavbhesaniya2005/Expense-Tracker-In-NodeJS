@@ -18,14 +18,14 @@ const addController = (req, res) => {
 
 const addTransactionCotroller = (req, res) => {
     
-    const { title, desc, amount, category, date } = req.body; 
+    const { title, description, amount, category, date } = req.body; 
     
     let transaction = new transactionModel({
         title,
-        desc,
         amount,
         category,
-        date
+        date,
+        description
     });
     
     transaction.save();
@@ -46,14 +46,14 @@ const editController = async (req, res) => {
 
 const editTransactionController = async (req, res) => {
 
-    const { title, desc, amount, category, date } = req.body; 
+    const { title, description, amount, category, date } = req.body; 
 
     await transactionModel.findByIdAndUpdate(req.params.id, {
         title,
-        desc,
         amount,
         category,
-        date
+        date,
+        description
     });
 
     console.log('Data Updated.');
