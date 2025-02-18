@@ -19,7 +19,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-6">
-                    <form action="/addTransaction" method="post" class="addingForm">
+                    <form action="/addTransaction" method="post" class="addingForm" enctype="multipart/form-data">
                         
                         <div class="input-group input-group-sm mb-3">
                             <span class="d-block me-3">Title :-</span>
@@ -50,10 +50,18 @@
                             <input type="date" class="form-control" placeholder="Enter Date" name="date">
                         </div><br>
 
-                        <div class="submit-btn d-flex align-items-center justify-content-center">
+                        <label for="">File Upload</label>
+                        <input type="file" name="logo"><br>
+
+                        <div class="submit-btn d-flex align-items-center justify-content-center mt-4">
                             <input type="submit" value="Submit" class="submit">
                         </div>
                     </form>
+
+                    <!-- <form action="/fileUpload" method="post">
+                        
+                        <input type="submit" value="Upload">
+                    </form> -->
                 </div>
             </div>
         </div>

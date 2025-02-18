@@ -15,7 +15,7 @@
 
     <div class="titlebar d-flex align-items-center justify-content-around">
         <h1 class="title mb-5">All Transactions</h1>
-        <a href="/add" class="addTransaction-btn">Add Transection</a>
+        <a href="/add" class="addTransaction-btn">Add Transaction</a>
     </div>
 
     <div class="container">
@@ -26,6 +26,7 @@
                         <tr class="text-center">
                             <th scope="col">#</th>
                             <th scope="col">Title</th>
+                            <th scope="col">Logo</th>
                             <th scope="col">Description</th>
                             <th scope="col">Amount</th>
                             <th scope="col">Category</th>
@@ -38,6 +39,13 @@
                             <tr class="text-center">
                                 <td scope="row"><%= index + 1 %></td>
                                 <td><%= item.title %></td>
+                                <td>
+                                    <% if(item.path){ %>
+                                        <img src="<%= item.path %>" height="70" width="100" alt="Logo" />
+                                    <% }else{ %>
+                                        <img src="uploads/noImage.jpg" height="70" width="100" alt="No Image" />
+                                    <% } %>
+                                </td>
                                 <td><%= item.description %></td>
                                 <td>₹<%= item.amount %></td>
                                 <td><%= item.category %></td>

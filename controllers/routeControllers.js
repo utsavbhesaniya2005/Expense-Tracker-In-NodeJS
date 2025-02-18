@@ -1,4 +1,5 @@
 const transactionModel = require('../models/transactionModel/transactionModel');
+const fs = require('fs');
 
 const defaultController = async (req, res) => {
 
@@ -18,14 +19,16 @@ const addController = (req, res) => {
 
 const addTransactionCotroller = (req, res) => {
     
-    const { title, description, amount, category, date } = req.body; 
+    let { title, description, amount, category, date } = req.body; 
+    let { path } = req.file;
     
     let transaction = new transactionModel({
         title,
         amount,
         category,
         date,
-        description
+        description,
+        path
     });
     
     transaction.save();
@@ -37,7 +40,7 @@ const addTransactionCotroller = (req, res) => {
 
 const editController = async (req, res) => {
 
-    const transactionData = await transactionModel.findById(req.params.id)
+    const transactionData = await transactionModel.findById(req.params.id);
     
     console.log("Data Finded.");
 
@@ -46,15 +49,12 @@ const editController = async (req, res) => {
 
 const editTransactionController = async (req, res) => {
 
-    const { title, description, amount, category, date } = req.body; 
+    let data = {
+        ...req.body, path : req.file.path
+        // path : req.file ? req.file.path : ''
+    }
 
-    await transactionModel.findByIdAndUpdate(req.params.id, {
-        title,
-        amount,
-        category,
-        date,
-        description
-    });
+    await transactionModel.findByIdAndUpdate(req.params.id, data);
 
     console.log('Data Updated.');
     
@@ -63,11 +63,24 @@ const editTransactionController = async (req, res) => {
 
 const deleteController = async (req, res) => {
 
-    await transactionModel.findByIdAndDelete(req.params.id);
+    let deletedData = await transactionModel.findById(req.params.id);
+
+    let localDelete = deletedData.path; 
+    
+    fs.unlink(`${localDelete}`, (err) => {
+        
+        console.log('Image Delete From Local Database.');
+    });
 
     console.log('Data Deleted.');
 
     res.redirect('/');
+}
+
+const fileUploads = (req, res) => {
+    
+    console.log('File', req.file);
+    res.redirect('/addTransaction');
 }
 
 module.exports = {
@@ -76,5 +89,6 @@ module.exports = {
     addTransaction : addTransactionCotroller,
     edit : editController,
     editTransaction : editTransactionController,
-    delete : deleteController
+    delete : deleteController,
+    fileUploads
 }

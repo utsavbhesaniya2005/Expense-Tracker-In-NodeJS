@@ -14,10 +14,14 @@ const transactionSchema = new mongoose.Schema({
             required : true
         },
     date : {
-            type : Date,
-            default : Date.now        
+            type : Date,  
+            default : Date.now,
         },
-    description : String
+    description : String,
+    path : {
+        type : String,
+        required : true
+    },
 });
 
 const transactionModel = mongoose.model('transactions', transactionSchema);

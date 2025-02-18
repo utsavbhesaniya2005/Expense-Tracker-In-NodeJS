@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 3002;
+const port = 3003;
 const bodyParsor = require('body-parser');
 const path = require('path');
 const db = require('./db/dbConfig');
@@ -12,6 +12,7 @@ app.use(bodyParsor.urlencoded({ extended : true }));
 
 // Static Path Setup
 app.use(express.static(path.join(__dirname, '/public')));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 app.use('/', Route);
 
