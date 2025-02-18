@@ -14,8 +14,18 @@ const transactionSchema = new mongoose.Schema({
             required : true
         },
     date : {
+<<<<<<< HEAD
             type : Date,  
             default : Date.now,
+=======
+<<<<<<< HEAD
+            type : Date,
+            default : Date.now()        
+=======
+            type : Date,  
+            default : Date.now,
+>>>>>>> 17749783fccab136c5e201c0458b70897a5068a0
+>>>>>>> 3a53aa9 (File Uploaded)
         },
     description : String,
     path : {
