@@ -64,13 +64,13 @@ const editTransactionController = async (req, res) => {
 const deleteController = async (req, res) => {
 
     let deletedData = await transactionModel.findById(req.params.id);
-
-    let localDelete = deletedData.path; 
     
-    fs.unlink(`${localDelete}`, (err) => {
+    fs.unlink(deletedData.path, (err) => {
         
         console.log('Image Delete From Local Database.');
     });
+
+    await transactionModel.findByIdAndDelete(req.params.id);
 
     console.log('Data Deleted.');
 
